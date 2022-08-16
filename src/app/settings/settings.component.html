@@ -1,0 +1,53 @@
+<div class="settings-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+
+        <h1 class="text-xs-center">Мої налаштування</h1>
+
+        <app-list-errors [errors]="errors"></app-list-errors>
+
+        <form [formGroup]="settingsForm" (ngSubmit)="submitForm()">
+          <fieldset [disabled]="isSubmitting">
+
+            <fieldset class="form-group">
+              <input class="form-control" type="text" placeholder="Лінк на аватарку" formControlName="image" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg" type="text" placeholder="Нікнейм"
+                formControlName="username" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <textarea class="form-control form-control-lg" rows="8" placeholder="Про мене" formControlName="bio">
+              </textarea>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg" type="email" placeholder="Емейл" formControlName="email" />
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg" type="password" placeholder="Новий пароль"
+                formControlName="password" />
+            </fieldset>
+
+            <button class="btn btn-lg btn-primary pull-xs-right" type="submit">
+              Оновити налаштування
+            </button>
+
+          </fieldset>
+        </form>
+
+        <!-- Line break for logout button -->
+        <hr />
+
+        <button class="btn btn-outline-danger" (click)="logout()">
+          Розлогінитися.
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
